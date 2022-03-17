@@ -1,0 +1,112 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-icons/font/bootstrap-icons';
+
+
+
+:root{
+    --card-bg-color:#e0e0e0;
+    --hypertext-color:#707070;
+    --grey-dark-color:#797979;
+}
+body.auth_register .card, .characters_index .grey-bg {
+    background-color: var(--card-bg-color) ;
+}
+
+a, .nav-link {
+    color:var(--hypertext-color) ;
+    text-decoration: none;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+a:hover,.nav-link:hover, .nav-link:focus {
+    font-weight: 700;
+    color:var(--hypertext-color) ;
+}
+
+a.viewmore {
+    font-weight: 800;
+}
+
+a.viewmore:before {
+    content: "___";
+    vertical-align: super;
+}
+
+.row.pagination {
+    margin-top: 2em;
+}
+.row.pagination .page-item.active .page-link,
+.viewcharacter-btn .btn-primary{
+    background-color: var(--grey-dark-color) ;
+    border-color: var(--grey-dark-color) ;
+}
+.row.pagination .page-link {
+    border:0;
+    color: var(--hypertext-color) ;
+    background-color:transparent;
+}
+.row.pagination .page-item.active .page-link {
+    color: #fff;
+}
+.page-item:first-child .page-link:before {
+    content: "\F22D";
+    display: inline-block;
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    visibility:visible;    
+}
+.page-item:last-child .page-link:before {
+    content: "\F231";
+    display: inline-block;
+    font-family: "bootstrap-icons" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    visibility:visible;
+}
+.page-item:last-child .page-link,
+.page-item:first-child .page-link {
+    visibility: hidden;
+}
+.characters_show button.btn.btn-primary {
+    text-transform: uppercase;
+    border-radius: 15px;
+    width: 50%;
+}
+.characters_show .card {
+    border: none;
+    background: none;
+}
+.back-listing {
+    text-transform: uppercase;
+}
+.large-50 {
+    font-size: 71px;
+    font-weight: 900;
+}
+body.verification_notice .card-body {
+    text-align: center;
+}
+button.btn.btn-light.btn-lg.w-100.text-uppercase {
+    border-radius: 25px;
+}
