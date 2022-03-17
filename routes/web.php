@@ -19,13 +19,6 @@ use App\Http\Controllers\VerificationController;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
 
-    Route::get('/', function () {
-        return view('home');
-    });
-
-    Route::get('/home', function () {
-        return view('home');
-    });
 
     View::composer('*', function ($view) {
         $view_name = str_replace('.', '_', $view->getName());
@@ -38,6 +31,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
 
     Route::group(['middleware' => ['auth']], function() {
+
+
+        Route::get('/', function () {
+            return view('home');
+        });
+
+        Route::get('/home', function () {
+            return view('home');
+        });
+
         /**
         * Verification Routes
         */
