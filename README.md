@@ -23,67 +23,23 @@ cd YularaTech/
 ```
 
 ```
-composer update
+composer install
 ```
 
 ## Development setup
 
-There are 2 ways to set this template for local development. Choose any of the following:
+Copy the example env file and make the required configuration changes in the .env file
 
--   [Using Laravel Homestead](#using-laravel-homestead) (recommended)
--   [Using build-in development server](#using-built-in-development-server)
+    cp .env.example .env
 
-### Using Laravel Homestead
+Generate a new application key
 
-If you are going to use Laravel Homestead, execute the following:
+    php artisan key:generate
 
-```
-php vendor/bin/homestead make
-```
+Run the database migrations (**Set the database connection in .env before migrating**)
 
-This will create `Homestead.yaml` file for the project.
+    php artisan migrate
 
-#### Update `Homestead.yaml`
-
-Change the sites' `map` to `yt.local`.
-
-```
-sites:
-    - map: yt.local
-      to: /home/vagrant/code/public
-```
-
-#### Fire up vagrant box
-
-```
-vagrant up
-```
-
-Provision, because some things just stop working for some reason.
-
-```
-vagrant reload --provision
-```
-
-#### Connect to the box via SSH
-
-```
-vagrant ssh
-```
-
-```
-cd code/
-```
-
-Generate key:
-
-```
-cp .env.example .env
-```
-
-```
-art key:generate
-```
 
 #### Compiling assets
 
@@ -114,27 +70,7 @@ Using Browsersync.
 ```
 npm run serve
 ```
+Start the local development server
 
-Open your browser and enter `http://yt:3000`. The files configured on `webpack.mix.js` are now on watch. Please take note of the port and change if needed.
-
-### Using built-in development server
-
-If you don't use Laravel Homestead, you can following the next steps in using built-in development server.
-
-Update `.env.example` with your preference and set `USE_HOMESTEAD` to `false`.
-
-Make a `.env` file by copying the `.env.example`.
-
-```
-cp .env.example .env
-```
-
-Generate key:
-
-```
-php artisan key:generate
-```
-
-After setting up `.env` file, proceed to install the npm packages and compile the assets as stated on the [Compiling assets](#compiling-assets) section.
-
+    php artisan serve
 ---
